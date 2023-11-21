@@ -65,7 +65,7 @@ def text_message(number,text):
 
     return data
 
-def button_reply_message(number, options, body, footer, sedd, messageId):
+def button_reply_message(number, options, body, footer, obj_type):
 
     buttons = []
 
@@ -74,7 +74,7 @@ def button_reply_message(number, options, body, footer, sedd, messageId):
             {
                 "type": "reply",
                 "reply": {
-                    "id": sedd + "_btn_" + str(iteration+1),
+                    "id": obj_type + "_btn_" + str(iteration+1),
                     "title": option
                 }
             }
@@ -104,23 +104,22 @@ def button_reply_message(number, options, body, footer, sedd, messageId):
     return data
 
 ## Example function for list reply
-def list_reply_message(number, options, body, footer, sedd, messageId):
+def list_reply_message(number, options, body, footer, obj_type, messageId):
     
     rows = []
     
     for iteration, option in enumerate(options):
-        rows.append(
-            {
-                "id": sedd + "_row_" + str(iteration+1),
+        rows.append({
+                "id": obj_type + "_row_" + str(iteration+1),
                 "title": option,
                 "description": ""
-            }
-        )
+        })
 
     data = json.dumps(
         {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
+            "message_id":  messageId,
             "to": number,
             "type": "interactive",
             "interactive": {
@@ -235,7 +234,7 @@ def chatbot_options(text,number, messageId, name):
             body = "¡Hola! 👋 ¿Qué servicio deseas conocer?"
             footer = "Equipo CityHaters"
 
-            response_msg = button_reply_message(number, services, body, footer, "sed1", messageId)
+            response_msg = list_reply_message(number, services, body, footer, "service", messageId)
             
             list.append(response_msg)
 
