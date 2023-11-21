@@ -4,11 +4,13 @@ import json
 import time
 
 def get_wa_message(message):
+
     if 'type' not in message :
         text = 'unknown message type'
         return text
 
     typeMessage = message['type']
+
     if typeMessage == 'text':
         text = message['text']['body']
     elif typeMessage == 'button':
@@ -19,7 +21,6 @@ def get_wa_message(message):
         text = message['interactive']['button_reply']['title']
     else:
         text = "message coudn't be processed"
-    
     
     return text
 
@@ -211,7 +212,7 @@ def mark_as_read_message(messageId):
 
 def chatbot_options(text,number, messageId, name):
 
-    ## text = text.lower()
+    text = text.lower()
     list = []
 
     print("User message: ",text)
@@ -223,7 +224,7 @@ def chatbot_options(text,number, messageId, name):
     time.sleep(2)
 
     ## Hospital Services
-    services = ['Cardiología', 'Terapia', 'Gastroenterología', 'Imagenes']
+    services = ['cardiología', 'terapia', 'gastroenterología', 'imagenes']
     contacts = ['Elcar Diologo', 'Elte Rapista', 'Lagastro Enterologa', 'Elima Gista']
     contact_numbers = ['1111-1111', '2222-2222', '3333-3333', '4444-4444']
     
