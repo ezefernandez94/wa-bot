@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/welcome', methods=['GET'])
 def  welcome():
-    return 'Hola guardias ?)'
+    return 'Vos sos de la B'
 
 @app.route('/webhook', methods=['GET'])
 def token_verification():
