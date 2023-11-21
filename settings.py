@@ -1,5 +1,0 @@
-token = 'apphospital'
-
-whatsapp_token = 'EAAMl4lvLqx0BO2IFZBXKZApfi6bAjAuLzIF25lz4XHLqxUJr9ujTsqHqNY7dt18f1gmRSmcUQdFkLSJn3PZCUyL5t0TZBXVNZCx9rXORakEvH8lKJMjN3o0wUcZBVbqPHwXI1K024ElHb6I0s9kigwOS353B0mZCHZCRuyEB5ziqZAVKNNEyHYZAJafU59kENAgqQx'
-
-whatsapp_url = 'https://graph.facebook.com/v17.0/166887043178108/messages'
